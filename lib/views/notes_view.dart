@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/views/widgets/add_note_buttom_sheet.dart';
+import 'package:notes_app/views/widgets/constants.dart';
 import 'package:notes_app/views/widgets/notes-view_body.dart';
 
 class NotesView extends StatelessWidget {
@@ -20,7 +21,7 @@ class NotesView extends StatelessWidget {
             },
           );
         },
-        child: Icon(Icons.add),
+        child: Icon(Icons.add, color: kPrimaryColor),
       ),
 
       body: const NotesViewBody(),
