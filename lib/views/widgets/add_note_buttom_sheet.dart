@@ -6,9 +6,14 @@ import 'package:notes_app/cubits/add_note_cubit/add_notes_state.dart';
 import 'package:notes_app/cubits/cubit/notes_cubit.dart';
 import 'package:notes_app/views/widgets/add_note_form.dart';
 
-class AddNoteButtomSheet extends StatelessWidget {
+class AddNoteButtomSheet extends StatefulWidget {
   const AddNoteButtomSheet({super.key});
 
+  @override
+  State<AddNoteButtomSheet> createState() => _AddNoteButtomSheetState();
+}
+
+class _AddNoteButtomSheetState extends State<AddNoteButtomSheet> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -21,6 +26,7 @@ class AddNoteButtomSheet extends StatelessWidget {
               print('failed ${state.errmessage}');
               if (state is AddNotesSuccess) {
                 BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                setState(() {});
                 Navigator.pop(context);
               }
             }
